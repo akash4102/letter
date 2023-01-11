@@ -30,10 +30,10 @@ app.post("/" ,function(req,res){
         ]
     };
     const jsonData=JSON.stringify(data);
-    const url="https://us21.api.mailchimp.com/3.0/lists/002e5d9027";
+    const url="https://us21.api.mailchimp.com/3.0/lists/List_id";
     const Options ={
         method: "POST",
-        auth: "akashverma_04:0b967a3d5f04f299bb3860d083888a5-us21"
+        auth: "USER_NAME:API_KEY"
     }
     const request=https.request(url,Options,function(response){
         if(response.statusCode==200){
@@ -54,17 +54,6 @@ app.post("/failure", function(req,res){
     res.redirect("/");
 });
 
-// {
-//     "name": "$event_name",
-//     "contact": $footer_contact_info,
-//     "permission_reminder": "permission_reminder",
-//     "email_type_option": true,
-//     "campaign_defaults": $campaign_defaults
-//   }
 app.listen(process.env.PORT || 3000,function(){
     console.log("server is running on 3000 port")
 })
-
-
-// api key d0b967a3d5f04f299bb3860d083888a5-us21
-// list id 002e5d9027
